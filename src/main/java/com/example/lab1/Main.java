@@ -1,6 +1,5 @@
 package com.example.lab1;
 
-import com.example.lab1.controllers.MainController;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.application.Application;
@@ -21,9 +20,6 @@ public class Main extends Application {
 		fxmlLoader.setLocation(getClass().getResource("/fxml/main.fxml"));
 		fxmlLoader.setResources(ResourceBundle.getBundle("/locale/locale", new Locale("ru")));
 		Parent fxmlMain = fxmlLoader.load();
-
-		MainController controller = fxmlLoader.getController();
-		controller.setMainStage(primaryStage);
 
 		primaryStage.setWidth(1200);
 		primaryStage.setHeight(600);

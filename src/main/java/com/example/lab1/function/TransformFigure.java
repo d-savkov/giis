@@ -1,11 +1,10 @@
-package com.example.lab1.functions;
+package com.example.lab1.function;
 
 import com.example.lab1.model.Edge;
 import com.example.lab1.model.Figure;
 import com.example.lab1.model.Pixel;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.paint.Color;
 
 public final class TransformFigure {
 
@@ -75,21 +74,6 @@ public final class TransformFigure {
 			}
 		}
 		return new Figure(pixelList, edgeList, 1);
-	}
-
-	public void temp(List<Edge> edgeList, Pixel[][] grid) {
-		edgeList.forEach(edge -> {
-			if (!edge.isVisible()) {
-				edge.getLine().forEach(
-					pixel -> grid[pixel.getX()][pixel.getY()].getRectangle().setFill(Color.WHITE));
-			}
-		});
-		edgeList.forEach(edge -> {
-			if (edge.isVisible()) {
-				edge.getLine().forEach(
-					pixel -> grid[pixel.getX()][pixel.getY()].getRectangle().setFill(Color.BLACK));
-			}
-		});
 	}
 
 	private boolean checkBounds(double x, double y, int limitX, int limitY) {

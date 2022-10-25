@@ -1,7 +1,7 @@
-package com.example.lab1.algoritms.circle;
+package com.example.lab1.algoritm.circle;
 
 import com.example.lab1.dialog.Dialogs;
-import com.example.lab1.functions.Functions;
+import com.example.lab1.function.Functions;
 import com.example.lab1.model.Pixel;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
@@ -28,7 +28,7 @@ public class AlgorithmEllipse {
 		Y_TILES = y_TILES;
 		this.textAreaDebug = textAreaDebug;
 		enterAB();
-		textAreaDebug.setText(textAreaDebug.getText() + resourceBundle.getString("ellips") + "\n");
+		textAreaDebug.setText(textAreaDebug.getText() + resourceBundle.getString("ellipse") + "\n");
 		begin();
 	}
 

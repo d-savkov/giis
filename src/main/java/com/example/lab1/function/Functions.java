@@ -1,7 +1,6 @@
-package com.example.lab1.functions;
+package com.example.lab1.function;
 
 import com.example.lab1.model.Pixel;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
@@ -47,7 +46,6 @@ public final class Functions {
 	public int sign(double a) {
 		return (a > 0) ? 1 : (a < 0) ? -1 : 0;
 	}
-
 
 	public void plot(Pixel[][] grid, int x, int y, int step, TextArea textAreaDebug,
 					 ResourceBundle resourceBundle) {
@@ -124,44 +122,4 @@ public final class Functions {
 				+ " y=" + y + " i=" + temp);
 		textAreaDebug.setText(textAreaDebug.getText() + "\n");
 	}
-
-	public Pixel findLeftmostTilePolygon(List<Pixel> pixelList) {
-		int iMin = 0;
-		for (int i = 0; i < pixelList.size(); i++) {
-			if (pixelList.get(i).getY() < pixelList.get(iMin).getY() || (
-				pixelList.get(i).getY() == pixelList.get(iMin).getY()
-					&& pixelList.get(i).getX() < pixelList.get(iMin).getX())) {
-				iMin = i;
-			}
-		}
-
-		return pixelList.get(iMin);
-	}
-
-	public Pixel findLeftmostTile(List<Pixel> pixelList) {
-		int iMin = 0;
-		for (int i = 0; i < pixelList.size(); i++) {
-			if (pixelList.get(i).getX() < pixelList.get(iMin).getX()) {
-				iMin = i;
-			}
-		}
-
-		return pixelList.get(iMin);
-	}
-
-
-	public Pixel findRightmostTilePolygon(List<Pixel> pixelList) {
-		int iMax = 0;
-		for (int i = 0; i < pixelList.size(); i++) {
-			if (pixelList.get(i).getY() > pixelList.get(iMax).getY() || (
-				pixelList.get(i).getY() == pixelList.get(iMax).getY()
-					&& pixelList.get(i).getX() > pixelList.get(iMax).getX())) {
-				iMax = i;
-			}
-		}
-
-		return pixelList.get(iMax);
-	}
-
-
 }

@@ -1,7 +1,7 @@
-package com.example.lab1.algoritms.circle;
+package com.example.lab1.algoritm.circle;
 
 import com.example.lab1.dialog.Dialogs;
-import com.example.lab1.functions.Functions;
+import com.example.lab1.function.Functions;
 import com.example.lab1.model.Pixel;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
@@ -87,6 +87,5 @@ public class AlgorithmCircle {
 			i++;
 		}
 	}
-
 
 }

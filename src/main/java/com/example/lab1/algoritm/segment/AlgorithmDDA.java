@@ -1,6 +1,6 @@
-package com.example.lab1.algoritms.segment;
+package com.example.lab1.algoritm.segment;
 
-import com.example.lab1.functions.Functions;
+import com.example.lab1.function.Functions;
 import com.example.lab1.model.Pixel;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,31 +12,29 @@ public class AlgorithmDDA {
 	private final ResourceBundle resourceBundle;
 
 	private final Pixel[][] grid;
-	private final int X_TILES;
-	private final int Y_TILES;
+	private final int xTiles;
+	private final int yTiles;
 	private final TextArea textAreaDebug;
 	private final Functions functions = Functions.getInstance();
 	private final List<Pixel> line = new ArrayList<>();
 	private Pixel startPixel;
 	private Pixel endPixel;
 
-	// Конструктор для инициализации алгоритма ЦДА
-	// grid - поле пикселей, x_Tiles и y_Tiles - размер пикселя по x и y.
-	public AlgorithmDDA(Pixel[][] grid, int x_TILES, int y_TILES, TextArea textAreaDebug,
+	public AlgorithmDDA(Pixel[][] grid, int xTiles, int yTiles, TextArea textAreaDebug,
 						ResourceBundle resourceBundle) {
 		this.grid = grid;
-		X_TILES = x_TILES;
-		Y_TILES = y_TILES;
+		this.xTiles = xTiles;
+		this.yTiles = yTiles;
 		this.resourceBundle = resourceBundle;
 		this.textAreaDebug = textAreaDebug;
 		initAlgorithm();
 	}
 
-	public AlgorithmDDA(Pixel[][] grid, Pixel start, Pixel end, int x_TILES, int y_TILES,
+	public AlgorithmDDA(Pixel[][] grid, Pixel start, Pixel end, int xTiles, int yTiles,
 						TextArea textAreaDebug, ResourceBundle resourceBundle) {
 		this.grid = grid;
-		X_TILES = x_TILES;
-		Y_TILES = y_TILES;
+		this.xTiles = xTiles;
+		this.yTiles = yTiles;
 		this.resourceBundle = resourceBundle;
 		this.textAreaDebug = textAreaDebug;
 
@@ -48,9 +46,9 @@ public class AlgorithmDDA {
 			textAreaDebug.getText() + resourceBundle.getString("algoritm_CDA") + "\n");
 
 		//Начальный пиксель
-		startPixel = functions.findLeftmostTilePolygon(grid, X_TILES, Y_TILES);
+		startPixel = functions.findLeftmostTilePolygon(grid, xTiles, yTiles);
 		//Конечный пиксель
-		endPixel = functions.findEndTile(grid, X_TILES, Y_TILES);
+		endPixel = functions.findEndTile(grid, xTiles, yTiles);
 
 		int x1 = startPixel.getX();
 		int x2 = endPixel.getX();

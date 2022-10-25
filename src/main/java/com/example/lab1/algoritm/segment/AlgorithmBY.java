@@ -1,6 +1,6 @@
-package com.example.lab1.algoritms.segment;
+package com.example.lab1.algoritm.segment;
 
-import com.example.lab1.functions.Functions;
+import com.example.lab1.function.Functions;
 import com.example.lab1.model.Pixel;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextArea;
@@ -10,33 +10,30 @@ public class AlgorithmBY {
 	private final ResourceBundle resourceBundle;
 
 	private final Pixel[][] grid;
-	private final int X_TILES;
-	private final int Y_TILES;
+	private final int xTiles;
+	private final int yTiles;
 	private final TextArea textAreaDebug;
 	private final Functions functions = Functions.getInstance();
 
-	// Конструктор для инициализации алгоритма Ву
-	// grid - поле пикселей, x_Tiles и y_Tiles - размер пикселя по x и y.
-	public AlgorithmBY(Pixel[][] grid, int x_TILES, int y_TILES, TextArea textAreaDebug,
+	public AlgorithmBY(Pixel[][] grid, int xTiles, int yTiles, TextArea textAreaDebug,
 					   ResourceBundle resourceBundle) {
 		this.resourceBundle = resourceBundle;
 		this.grid = grid;
-		X_TILES = x_TILES;
-		Y_TILES = y_TILES;
+		this.xTiles = xTiles;
+		this.yTiles = yTiles;
 		this.textAreaDebug = textAreaDebug;
 
 		begin();
 	}
 
-	//Начало алгоритма
 	private void begin() {
 		textAreaDebug.setText(
 			textAreaDebug.getText() + resourceBundle.getString("algoritm_BY") + "\n");
 
 		//Начальный пиксель
-		Pixel startPixel = functions.findLeftmostTilePolygon(grid, X_TILES, Y_TILES);
+		Pixel startPixel = functions.findLeftmostTilePolygon(grid, xTiles, yTiles);
 		//Конечный пиксель
-		Pixel endPixel = functions.findEndTile(grid, X_TILES, Y_TILES);
+		Pixel endPixel = functions.findEndTile(grid, xTiles, yTiles);
 
 		int x1 = startPixel.getX();
 		int y1 = startPixel.getY();

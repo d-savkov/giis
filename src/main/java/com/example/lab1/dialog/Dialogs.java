@@ -1,5 +1,6 @@
 package com.example.lab1.dialog;
 
+import java.util.Objects;
 import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
@@ -26,7 +27,7 @@ public class Dialogs {
 		if (result.isPresent()) {
 			res = result.get();
 		}
-		return Integer.parseInt(res);
+		return Integer.parseInt(Objects.requireNonNull(res));
 	}
 
 	public int showDialog(String name, int limit) {
@@ -39,7 +40,7 @@ public class Dialogs {
 		if (result.isPresent()) {
 			res = result.get();
 		}
-		return Integer.parseInt(res);
+		return Integer.parseInt(Objects.requireNonNull(res));
 	}
 
 	public void errorDialog(String error, String textError) {

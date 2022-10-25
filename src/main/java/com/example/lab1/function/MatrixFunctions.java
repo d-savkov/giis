@@ -1,4 +1,4 @@
-package com.example.lab1.functions;
+package com.example.lab1.function;
 
 public final class MatrixFunctions {
 
@@ -27,20 +27,4 @@ public final class MatrixFunctions {
 
 		return result;
 	}
-
-	public double[] matrixMult(double[][] firstMatrix, double[][] secondMatrix) {
-		if (firstMatrix.length != secondMatrix[0].length) {
-			return null;
-		}
-
-		double[] result = new double[firstMatrix.length];
-		for (int i = 0; i < firstMatrix.length; i++) {
-			for (int j = 0; j < secondMatrix.length; j++) {
-				result[i] += firstMatrix[i][j] * secondMatrix[j][i];
-			}
-		}
-
-		return result;
-	}
-
 }
