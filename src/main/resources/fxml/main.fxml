@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" disable="false" minHeight="-1.0" minWidth="-1.0"
+  prefHeight="599.9998779296875" prefWidth="999.9998779296875" xmlns="http://javafx.com/javafx/2.2"
+  fx:controller="com.example.lab1.controllers.MainController">
+  <center>
+    <VBox prefHeight="576.0" prefWidth="700.0000999999975">
+      <Label text="%result">
+        <VBox.margin>
+          <Insets left="20.0" top="5.0"/>
+        </VBox.margin>
+      </Label>
+      <Label text="x=0 y=0" textFill="#9f9f9f" fx:id="labelCoordinate">
+        <VBox.margin>
+          <Insets bottom="5.0" left="10.0" top="10.0"/>
+        </VBox.margin>
+      </Label>
+      <TabPane prefHeight="536.0" prefWidth="713.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab onSelectionChanged="#initTab1" text="%lab1_2">
+          <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="505.0"
+            prefWidth="718.0">
+            <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="5.0" id="ScrollPane" prefHeight="485.0"
+              prefViewportHeight="495.0" prefViewportWidth="693.0"
+              prefWidth="688.0">
+              <Pane style="-fx-background-color: #FFFFFF" prefHeight="500.0" prefWidth="683.0"
+                fx:id="paneTile"/>
+            </ScrollPane>
+            <padding>
+              <Insets bottom="5.0" left="10.0" right="10.0"/>
+            </padding>
+          </AnchorPane>
+        </Tab>
+        <Tab onSelectionChanged="#initTab2" text="%lab3">
+          <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+            prefWidth="200.0">
+            <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0" id="ScrollPane"
+              prefViewportHeight="478.0" prefViewportWidth="703.0">
+              <Pane style="-fx-background-color: #FFFF" disable="false" focusTraversable="true"
+                id="pain2"
+                mouseTransparent="false" pickOnBounds="false" prefHeight="588.0"
+                prefWidth="896.0" fx:id="pane2"/>
+            </ScrollPane>
+            <padding>
+              <Insets bottom="5.0" left="5.0" right="5.0" top="10.0"/>
+            </padding>
+          </AnchorPane>
+        </Tab>
+      </TabPane>
+    </VBox>
+  </center>
+  <right>
+    <VBox prefHeight="576.0" prefWidth="287.0">
+      <Label text="%debugging_information">
+        <VBox.margin>
+          <Insets left="5.0" top="5.0" fx:id="x1"/>
+        </VBox.margin>
+      </Label>
+      <Label VBox.margin="$x1" text="Label" fx:id="nameOfAlgorithm"/>
+      <TextArea editable="false" prefHeight="505.0" prefWidth="173.0" wrapText="true"
+        fx:id="textAreaDebug">
+        <VBox.margin>
+          <Insets bottom="10.0" left="5.0" right="10.0" top="10.0"/>
+        </VBox.margin>
+      </TextArea>
+    </VBox>
+  </right>
+  <top>
+    <MenuBar fx:id="menuBar">
+      <Menu mnemonicParsing="false" text="%segments">
+        <MenuItem mnemonicParsing="false" onAction="#initDDA" text="%algoritm_CDA"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmBR" text="%algoritm_BR"/>
+        <MenuItem disable="false" mnemonicParsing="false" onAction="#initAlgorithmBY"
+          text="%algoritm_BY" visible="true"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%lines_2_order" visible="true">
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmCircle" text="%circle"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmEllips" text="%ellips"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmParabola" text="%parabola"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmHyperbola" text="%hyperbola"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%approximation" visible="true">
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmErmit" text="%ErmitForm"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmBrezie" text="%BrezieForm"/>
+        <MenuItem mnemonicParsing="false" onAction="#initB_Splain" text="%B_Splain"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%loadFigure">
+        <MenuItem mnemonicParsing="false" onAction="#initLoadFigureFromFile" text="%fromFile"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%polygon" visible="true">
+        <Menu mnemonicParsing="false" text="%action">
+          <MenuItem mnemonicParsing="false" onAction="#paintTheFigure" text="%paint"/>
+        </Menu>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmGraham" text="%graham"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmJarvis" text="%jarvis"/>
+        <SeparatorMenuItem mnemonicParsing="false"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%filling" visible="true">
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmSimplePrimer"
+          text="%simple_primer"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmLineSeedFilling"
+          text="%line_seed_filling"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmAlgorithmOrderedListOfEdges"
+          text="%ordered_list_of_edges"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%laba7" visible="true">
+        <Menu mnemonicParsing="false" text="%start_algoritms">
+          <MenuItem mnemonicParsing="false" onAction="#doDelaunayTriangulation"
+            text="%delaunay_triangulation"/>
+        </Menu>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmDelaunayTriangulation"
+          text="%delaunay_triangulation"/>
+        <SeparatorMenuItem mnemonicParsing="false"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%delete_lines" visible="true">
+        <Menu mnemonicParsing="false" text="%start_algoritms">
+          <MenuItem mnemonicParsing="false" onAction="#docCippingCohen" text="%clipping_Cohen"/>
+          <MenuItem mnemonicParsing="false" onAction="#doСlippingCyrusBeck"
+            text="%clipping_Cyrus_Beck"/>
+          <MenuItem mnemonicParsing="false" onAction="#doСlippingRoberts"
+            text="%clipping_roberts"/>
+        </Menu>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmCyrusBeck" text="%Cyrus_Beck"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmRoberts"
+          text="%roberts_algorithm"/>
+        <MenuItem mnemonicParsing="false" onAction="#initAlgorithmCohenSutherland"
+          text="%Cohen_Sutherland_algorithm"/>
+        <SeparatorMenuItem mnemonicParsing="false"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%settings">
+        <MenuItem mnemonicParsing="false" onAction="#cageSetting" text="%cage_setting"/>
+        <MenuItem mnemonicParsing="false" onAction="#tileSetting" text="%tile"/>
+        <MenuItem mnemonicParsing="false" onAction="#clear" text="%clear"/>
+        <SeparatorMenuItem mnemonicParsing="false"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="%help">
+        <MenuItem mnemonicParsing="false" onAction="#aboutProgram" text="%about_program"/>
+      </Menu>
+    </MenuBar>
+  </top>
+</BorderPane>
